@@ -4,7 +4,7 @@ import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { useDispatch, useSelector } from 'react-redux';
 import DialogBox from "./DialogBox";
 import { deleteRecord ,getEditRecord ,editRecord} from "./Redux/Action/action";
-import {ADDDELETE} from './Redux/Action/actionCreators'
+import {addDelete} from './Redux/Action/actionCreators'
 
 const DataTable = (record) => {
   const [show,setShow]= useState(false)
@@ -28,7 +28,7 @@ const DataTable = (record) => {
   const deleteUserDetail = async (user, id) => {
     dispatch(deleteRecord(id));
     console.log(user)
-    dispatch(ADDDELETE(user))
+    dispatch(addDelete(user))
      
   }
 

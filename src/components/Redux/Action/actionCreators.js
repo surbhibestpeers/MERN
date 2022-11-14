@@ -1,4 +1,4 @@
-export const GET = (user) => {
+export const get = (user) => {
     console.log(user);
     return {
         type:'GET_USER',
@@ -8,7 +8,7 @@ export const GET = (user) => {
 }
 
 
-export const DELETE = (user)=> {
+export const remove = (user)=> {
     console.log(user)
     return {
         type:'DELETE_USER',
@@ -17,7 +17,7 @@ export const DELETE = (user)=> {
     }
 }
 
-export const ADD = (user)=> {
+export const add = (user)=> {
     console.log(user);
     return {
         type:'ADD_USER',
@@ -26,7 +26,7 @@ export const ADD = (user)=> {
     }
 }
 
-export const GETEDIT = (user)=> {
+export const getEdit = (user)=> {
     console.log(user);
     return {
         type:'GET_EDIT_USER',
@@ -34,7 +34,7 @@ export const GETEDIT = (user)=> {
     }
 }
 
-export const EDIT = (user)=> {
+export const edit = (user)=> {
     console.log("999999",user);
     return {
         type:'EDIT_USER',
@@ -42,7 +42,7 @@ export const EDIT = (user)=> {
     }
 }
 
-export  const ADDDELETE = (user)=> {
+export  const addDelete = (user)=> {
     console.log("......",user)
     return {
         type:'ADD_DELETE',

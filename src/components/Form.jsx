@@ -61,6 +61,7 @@ const clearValue = () => {
           <h5>Personal Detail</h5>
           <div className="gap">
             <TextField
+           
               id="standard-basic"
               label="Name"
               variant="standard"
@@ -68,7 +69,9 @@ const clearValue = () => {
               onChange={(e) => onValueChange(e)}
               name="name"
               value={user.name}
+            
             />
+           
             <TextField
               id="standard-basic"
               label="Phone"
@@ -168,3 +171,4 @@ const clearValue = () => {
 };
 
 export default Form;
+
