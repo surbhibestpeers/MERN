@@ -1,3 +1,5 @@
+
+
 import express from 'express';
 import dotenv from 'dotenv'
 import cors from 'cors';
@@ -18,6 +20,6 @@ const PORT = 8000;
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
 
-Connection(username, password);
+Connection();
 
 app.listen(PORT, ()=> console.log(`server is running successfully at PORT ${PORT}`))

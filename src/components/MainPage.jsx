@@ -16,7 +16,7 @@ const MainPage = () => {
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPost =  users.slice(firstPostIndex,lastPostIndex)
 
-  console.log(currentPost)
+  // console.log(currentPost)
 
   const navigate = useNavigate();
   const dispatch = useDispatch()
@@ -30,6 +30,7 @@ const MainPage = () => {
 
   const getAllUsers = async () => {
     setUsers(list);
+   
   };
   const getData = ()=> {
      dispatch(getRecord())

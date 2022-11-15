@@ -17,6 +17,7 @@ export const addUser=async(request, response)=> {
 }
 
 export const getUsers=async(request, response)=> {
+   
   try {
        const users = await User.find({})
     //console.log(users)
