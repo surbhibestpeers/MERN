@@ -2,41 +2,40 @@ import React, { useEffect, useState } from "react";
 import "./styles.css";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
-import Pagination from './Pagination';
+// import Pagination from './Pagination';
 import DataTable from "./DataTable";
 import { useDispatch, useSelector } from "react-redux";
 import { getRecord,deleteRecord } from "./Redux/Action/action";
+import Pagination from '@mui/material/Pagination';
+import usePagination from "./Pagination";
 
 const MainPage = () => {
 
-  const [users, setUsers] = useState([]);
-  const [currentPage,setCurrentPage] = useState(1)
-  const [postsPerPage,setPostsPerPage] = useState(4)
-  const lastPostIndex = currentPage * postsPerPage;
-  const firstPostIndex = lastPostIndex - postsPerPage;
-  const currentPost =  users.slice(firstPostIndex,lastPostIndex)
+  const {list} = useSelector((state)=>state.FetchReducer)
+ 
+ 
+  const [page, setPage] = useState(1);
 
-  // console.log(currentPost)
+  const PER_PAGE = 4;
+  const data = list;
+  const count = Math.ceil(data.length / PER_PAGE);
+  const _DATA = usePagination(data, PER_PAGE);
 
+  const handleChange = (e, p) => {
+    setPage(p);
+    _DATA.jump(p);
+  };
+  
   const navigate = useNavigate();
   const dispatch = useDispatch()
+  
   useEffect(() => {
-    getAllUsers();
     getData()
   }, []);
 
-  const {list} = useSelector((state)=>state.FetchReducer)
-  console.log(list)
-
-  const getAllUsers = async () => {
-    setUsers(list);
-   
-  };
   const getData = ()=> {
-     dispatch(getRecord())
-   
+    dispatch(getRecord())
   }
-
 
   return (
     <div className="table_head">
@@ -49,9 +48,17 @@ const MainPage = () => {
         Deleted Users List
       </Button>
      
-      <DataTable record={list}/>
+      <DataTable record={_DATA.currentData()}/>
     
-      <Pagination totalPosts={users.length} postsPerPage={postsPerPage}  setCurrentPage={setCurrentPage}/>
+      <Pagination
+        count={count}
+        size="large"
+        page={page}
+        variant="outlined"
+        shape="rounded"
+        onChange={handleChange}
+        className="pagination"
+      />
     </div>
   );
 };

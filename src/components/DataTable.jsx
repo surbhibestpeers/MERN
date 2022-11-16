@@ -3,10 +3,12 @@ import {Table,TableBody,TableCell,TableHead,TableRow} from "@mui/material";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { useDispatch, useSelector } from 'react-redux';
 import DialogBox from "./DialogBox";
-import { deleteRecord ,getEditRecord ,editRecord} from "./Redux/Action/action";
+import { deleteRecord ,getEditRecord } from "./Redux/Action/action";
 import {addDelete} from './Redux/Action/actionCreators'
 
 const DataTable = (record) => {
+
+  
   const [show,setShow]= useState(false)
   
   
@@ -16,20 +18,16 @@ const DataTable = (record) => {
 
   const tableData = [record]
 
-  
-
   const {euser} = useSelector((state)=>state.FetchReducer)
-  
 
   const editUserDetail = async (id) => {
     dispatch(getEditRecord(id))
-    setShow(true);
+    setShow(true);  
   };
   const deleteUserDetail = async (user, id) => {
     dispatch(deleteRecord(id));
-    console.log(user)
-    dispatch(addDelete(user))
-     
+   
+    dispatch(addDelete(user))  
   }
 
   return (

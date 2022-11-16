@@ -2,7 +2,7 @@ const initialState = {
   user:[],
   list: [],
   duser:[],
-  eduser:{},
+  euser:{},
   aduser:[]
 };
 

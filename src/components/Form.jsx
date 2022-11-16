@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import "./styles.css";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
 import { addRecord  } from "./Redux/Action/action";
 
@@ -15,13 +15,13 @@ const Form=()=> {
   const onSubmit = (user) => {
     console.log("user detail:-",user);
     dispatch(addRecord(user))
-      //   Swal.fire({
-      //   position: "center",
-      //    icon: "success",
-      //    title: "Your record has been saved",
-      //   showConfirmButton: false,
-      //   timer: 1000,
-      // });
+        Swal.fire({
+        position: "center",
+         icon: "success",
+         title: "Your record has been saved",
+        showConfirmButton: false,
+        timer: 1000,
+      });
       reset()
   };
   return(

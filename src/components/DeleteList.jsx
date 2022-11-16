@@ -13,7 +13,10 @@ import Button from "@mui/material/Button";
 const DeleteList = () => {
  
   const {aduser} = useSelector((state)=>state.FetchReducer)
-  console.log(aduser)
+   
+ const data = JSON.stringify(aduser)
+  console.log("********",data)
+
 
   const navigate = useNavigate();
   
@@ -44,7 +47,7 @@ const DeleteList = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {aduser.map((user) => (
+            {aduser.map((user)=> (
               <TableRow>
                 <TableCell>{user._id}</TableCell>
                 <TableCell>{user.name}</TableCell>
