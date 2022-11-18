@@ -1,55 +1,37 @@
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-} from "@mui/material";
+import {Table, TableBody,TableCell, TableHead, TableRow,} from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Button from "@mui/material/Button";
 
 const DeleteList = () => {
  
   const {aduser} = useSelector((state)=>state.FetchReducer)
-   
- const data = JSON.stringify(aduser)
-  console.log("********",data)
-
+ 
+ const data = [aduser]
 
   const navigate = useNavigate();
-  
-  const backtolist = () => {
-    navigate("/");
-  };
-  
+  const tableHead = [ "Id","Name","Phone","Email","City","Zip-Code","Address","Date of Employement","Date of Birth"];
+ 
   return (
-    <div>
-      <div className="table_head">
-        <h1>List of Deleted Users</h1>
-        <Button variant="contained" className="btn_1" onClick={backtolist}>
+    <div className="back_1">
+    <div className="center_1">
+        <h1 className="list_user">List of Deleted Users</h1>
+        <button variant="contained" className="button_1" onClick={()=> navigate("/")}>
           Back to List
-        </Button>
+        </button>
 
         <Table>
           <TableHead className="t-head">
             <TableRow>
-              <TableCell>Id</TableCell>
-              <TableCell>Name</TableCell>
-              <TableCell>Phone</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>City</TableCell>
-              <TableCell>Zip-Code</TableCell>
-              <TableCell>Address</TableCell>
-              <TableCell>Date of Employement</TableCell>
-              <TableCell>Date of Birth</TableCell>
+            {tableHead.map((data) => (
+              <TableCell>{data}</TableCell>
+            ))}
             </TableRow>
           </TableHead>
           <TableBody>
-            {aduser.map((user)=> (
+            {data.map((user)=> (
               <TableRow>
-                <TableCell>{user._id}</TableCell>
+                <TableCell >{user._id}</TableCell>
                 <TableCell>{user.name}</TableCell>
                 <TableCell>{user.phone}</TableCell>
                 <TableCell>{user.email}</TableCell>
@@ -61,8 +43,7 @@ const DeleteList = () => {
               </TableRow>
             ))}
           </TableBody>
-        </Table>
-        
+        </Table> 
       </div>
     </div>
   );

@@ -17,32 +17,9 @@ h2 {
 h4 {
     text-align: left;
 }
-.gap {
-    display: flex;
-    justify-content: space-between;
-}
-.textfield {
-    width:100%
-}
-.textfield_1 {
-    width:100%
-}
-.btn {
-    background-color: black !important;
-    margin-top: 20px !important;
-    
-}
-.move_to_page {
-    cursor: pointer;
-}
 
-.table_head {
-    width:90%;
-    margin:auto;
-    
-}
 .t-head {
-    background-color:rgb(249, 235, 250) ;
+    background-color:rgb(253, 241, 202);
 }
 .btn_1 {
     background-color: black !important;
@@ -92,5 +69,69 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-bottom: 2rem !important;
+    color:rgb(47, 163, 107);
+}
+.back_1 {
+    background-image: linear-gradient(rgb(47, 163, 107), rgb(243, 225, 167));
+    background-size: cover;
+    height: 100%;
+    position:absolute;
+    width:100%
+}
+
+.center_1 {
+    background-color: #fff;
+    width:90%;
+    
+    border-radius:10px;
+    margin:auto;
+    margin-top: 3rem;
+    padding:20px;
+   
+    position: relative;
+}
+.button_1 {
+    margin-top: 30px;
+    width:10rem;
+    height:40px;
+    border-radius:10px;
+    background-image: linear-gradient(rgb(47, 163, 107), rgb(243, 225, 167));
+    border:none;
+    color:black;
+    font-weight: 900;
+    cursor: pointer;
+    margin:1rem;
+     margin-left:0px;
+}
+.button_1:hover {
+    background-color: rgb(11, 45, 29);
+}
+.list_user {
+    font-weight: bolder;
+    font-size: 30px;
+    background: -webkit-linear-gradient(rgb(47, 163, 107), rgb(243, 225, 167));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin:20px;
+    margin-left:0px;
+    padding-top: 20px;
+    
+}
+.icon {
+    color:rgb(47, 163, 107)!important;
+}
+.but_position {
+    display: flex;
+    justify-content: center;
+}
+.no_record {
+    font-weight: bold;
+    font-size: 50px;
+    background: -webkit-linear-gradient(rgb(47, 163, 107), rgb(243, 225, 167));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    justify-content: center;
+    margin:auto;
 }

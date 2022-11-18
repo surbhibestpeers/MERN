@@ -1,0 +1,142 @@
+.back {
+    background-image: linear-gradient(rgb(47, 163, 107), rgb(243, 225, 167));
+    background-size: cover;
+    position:absolute;
+}
+
+.center {
+    background-color: #fff;
+    width:80%;
+    border-radius:10px;
+    margin:auto;
+    margin-top: 3rem;
+     margin-bottom: 5%;
+    display: flex;
+    position: relative;
+}
+.img_position {
+    margin-top: 5rem;
+    margin-left: 1rem;
+}
+    .img {
+        width:40%;
+        display:block;
+    }
+    .form {
+        width:60%;
+        padding:30px;
+        margin-top: -10px;
+    }
+.top_head {
+    font-weight: bolder;
+    font-size: 30px;
+    background: -webkit-linear-gradient(rgb(47, 163, 107), rgb(243, 225, 167));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+.head {
+    background: -webkit-linear-gradient(rgb(47, 163, 107), rgb(243, 225, 167));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: -28px;
+}
+.main-head {
+   display: flex;
+   justify-content: space-between;
+}
+.link {
+    margin: 40px;
+    color:rgb(47, 163, 107)
+}
+.link:hover {
+    color:rgb(11, 45, 29)
+}
+.enter {
+    border-radius: 10px;
+    height:30px;
+    width:80%;
+    margin-top: -10px;
+    background-color: rgb(253, 241, 202);
+    border:1px solid rgb(218, 216, 216);
+    padding-left:10px;
+    padding-right:10px
+
+}
+.input_field {
+    display:flex;
+    justify-content: space-between;
+    width:100%
+}
+.space {
+  width:50%
+}
+.width {
+    width:100%
+}
+.enter_1 {
+    border-radius: 10px;
+    height:30px;
+    width:92%;
+    margin-top: -10px;
+    background-color: rgb(253, 241, 202);
+    border:1px solid rgb(218, 216, 216);
+    padding-left:10px;
+    padding-right:10px
+}
+button {
+    margin-top: 30px;
+    width:30%;
+    height:40px;
+    border-radius:10px;
+    background-image: linear-gradient(rgb(47, 163, 107), rgb(243, 225, 167));
+    border:none;
+    color:black;
+    font-weight: 900;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(11, 45, 29);
+}
+
+@media (max-width:913px) {
+    .img {
+        display: none;
+    }
+    .form {
+        width:100%;
+    }
+}
+
+@media (max-width:420px) {
+    .img {
+        display: none;
+    }
+    .form {
+        width:100%;
+    }
+    .input_field {
+        display: flex;
+        flex-direction: column;
+    }
+    .space {
+        width:100%
+    }
+    .main-head {
+        display: flex;
+        flex-direction: column;
+    }
+    .link {
+        margin-left: 10px;
+        margin-top:10px
+    }
+    .back {
+        width:100vw;
+    }
+    .enter {
+        width:90%
+    }
+    button {
+        width:60%
+    }
+}

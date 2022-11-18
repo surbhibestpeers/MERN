@@ -1,8 +1,9 @@
 
 import './App.css';
-import Form from './components/Form';
+
 import MainPage from './components/MainPage';
 import DeleteList from './components/DeleteList';
+import DesignForm from './components/DesignForm/DesignForm';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 
@@ -11,10 +12,9 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route path="/form" element={<Form/>}/>
           <Route path="/" element={<MainPage/>}/>
           <Route path="/delete" element={<DeleteList/>}/>
-        
+          <Route path="/design" element={<DesignForm/>}/>
         </Routes>
       </Router>
       
